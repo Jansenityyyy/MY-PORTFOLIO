@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jolly+Lodger&family=Kalam:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>MY PORTFOLIO</h1>
+        <div class="menu-icon" id="menuIcon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav id="nav">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li class="active"><a href="contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact-container">
+        <h2 class="contact-title">Get In Touch</h2>
+        <p class="contact-subtitle">Have a project in mind? Let's work together!</p>
+
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="info-card">
+                    <h3>📧 Email</h3>
+                    <p><a href="mailto:Silao.jansenmark.quintos1@gmail.com">Silao.jansenmark.quintos1@gmail.com</a></p>
+                </div>
+
+                <div class="info-card">
+                    <h3>📱 Phone</h3>
+                    <p><a href="tel:+639099725330">+63 909 972 5330</a></p>
+                </div>
+
+                <div class="info-card">
+                    <h3>📍 Location</h3>
+                    <p>Manila, Metro Manila<br>Quezon City 1105<br>Philippines</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>⏰ Availability</h3>
+                    <p>Monday - Friday<br>9:00 AM - 6:00 PM (PHT)</p>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <h3>Connect With Me</h3>
+            <div class="social-icons">
+                <a href="https://github.com/Jansenityyyy" class="social-icon" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:Silao.jansenmark.quintos1@gmail.com" class="social-icon" title="Gmail">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://www.facebook.com/JansenMark04" class="social-icon" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/_jansenityyyy_/" class="social-icon" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const menuIcon = document.getElementById('menuIcon');
+const nav = document.getElementById('nav');
+
+menuIcon.addEventListener('click', () => {
+    menuIcon.classList.toggle('active');
+    nav.classList.toggle('active');
+});
+
+const navLinks = document.querySelectorAll('nav ul li a');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        menuIcon.classList.remove('active');
+        nav.classList.remove('active');
+    });
+});
+
+document.addEventListener('click', (e) => {
+    if (!nav.contains(e.target) && !menuIcon.contains(e.target)) {
+        menuIcon.classList.remove('active');
+        nav.classList.remove('active');
+    }
+});
+    </script>
+</body>
+</html>

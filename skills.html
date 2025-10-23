@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio - Skills</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jolly+Lodger&family=Kalam:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="skills.css">
+</head>
+<body>
+    <header>
+        <h1>MY PORTFOLIO</h1>
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav id="nav">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="active"><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="skills-container">
+        <div class="skill-card">
+            <div class="skill-title">
+                <i class="fab fa-html5"></i> HTML
+            </div>
+            <p class="skill-description">
+                I use HTML to build the structure of my websites. It's where everything starts — creating sections,
+                organizing content, and setting up the foundation for the whole page.
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-title">
+                <i class="fab fa-css3-alt"></i> CSS
+            </div>
+            <p class="skill-description">
+                CSS is my favorite part because it's where I get creative. I use it to design layouts, choose colors,
+                add animations, and make websites look clean and modern.
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-title">
+                <i class="fab fa-js-square"></i> JavaScript
+            </div>
+            <p class="skill-description">
+                I use JavaScript to make my websites come alive. From adding effects and transitions to handling user
+                interactions, it brings functionality and movement to my projects.
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-title">
+                <i class="fab fa-java"></i> Java
+            </div>
+            <p class="skill-description">
+                Java helped me understand logic and programming fundamentals. I've used it for console-based programs
+                and learning how object-oriented programming works.
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-title">
+                <i class="fab fa-php"></i> PHP
+            </div>
+            <p class="skill-description">
+                I use PHP for backend tasks like connecting websites to databases and handling forms. It's great for
+                creating dynamic websites that can store and display user data.
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-title">
+                <i class="fas fa-laptop-code"></i> Laravel
+            </div>
+            <p class="skill-description">
+                I use Laravel to build web applications with a strong backend structure. It helps me manage routes,
+                databases, and authentication easily. I like how organized and developer-friendly it is — it makes
+                coding in PHP faster, cleaner, and more efficient.
+            </p>
+        </div>
+    </section>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const nav = document.getElementById('nav');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!menuToggle.contains(e.target) && !nav.contains(e.target)) {
+                menuToggle.classList.remove('active');
+                nav.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background: linear-gradient(135deg, #000000 20%, #1a3d36);
+    color: #fff;
+    font-family: 'Jolly Lodger', cursive;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    position: relative;
+}
+
+header h1 {
+    font-size: 5rem;
+    letter-spacing: 1px;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001;
+    position: relative;
+}
+
+.menu-icon span {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+.menu-icon.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-icon.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 60px;
+}
+
+nav ul li {
+    font-size: 2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 8px 20px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #26AA87;
+}
+
+nav ul li.active a {
+    background-color: #26AA87;
+}
+
+.projects-container {
+    padding: 40px 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.projects-title {
+    text-align: center;
+    font-size: 4rem;
+    margin-bottom: 50px;
+    font-family: 'Kalam', cursive;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border: 2px solid rgba(38, 170, 135, 0.3);
+    display: block;
+    color: inherit;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(38, 170, 135, 0.4);
+    border-color: #26AA87;
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.project-card:nth-child(1) .project-image {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #26AA87;
+    font-family: 'Kalam', cursive;
+    text-align: center;
+}
+
+.project-info p {
+    font-family: sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #e0e0e0;
+    text-align: center;
+}
+
+.view-all {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.view-all-btn {
+    font-family: 'Kalam', cursive;
+    font-size: 1.5rem;
+    color: #26AA87;
+    text-decoration: none;
+    padding: 12px 30px;
+    border: 2px solid #26AA87;
+    border-radius: 25px;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.view-all-btn:hover {
+    background-color: #26AA87;
+    color: #000;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px 30px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: linear-gradient(135deg, #1a3d36 0%, #000000 100%);
+        z-index: 999;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    nav.active {
+        max-height: 500px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 20px 30px;
+    }
+
+    nav ul li {
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+    }
+
+    nav ul li a {
+        padding: 15px 20px;
+        border-radius: 8px;
+    }
+
+    .projects-container {
+        padding: 20px 20px;
+    }
+
+    .projects-title {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .view-all-btn {
+        font-size: 1.2rem;
+        padding: 10px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .projects-title {
+        font-size: 2rem;
+    }
+
+    nav ul li {
+        font-size: 1.5rem;
+    }
+}

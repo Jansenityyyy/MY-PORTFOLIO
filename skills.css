@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #000000 20%, #1a3d36);
+    color: #fff;
+    font-family: 'Jolly Lodger', cursive;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    position: relative;
+}
+
+header h1 {
+    font-size: 5rem;
+    letter-spacing: 1px;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+    z-index: 1000;
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 60px;
+}
+
+nav ul li {
+    font-size: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: inherit;
+    padding: 8px 20px;
+    transition: 0.3s;
+    display: block;
+}
+
+nav ul li a:hover,
+nav ul li.active a {
+    background-color: #26AA87;
+}
+
+.skills-container {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 60px;
+}
+
+.skill-card {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 12px;
+    transition: 0.3s;
+    animation: fadeIn 0.6s ease-in;
+}
+
+.skill-card:hover {
+    background-color: rgba(38, 170, 135, 0.3);
+    transform: translateY(-5px);
+}
+
+.skill-title {
+    font-size: 3rem;
+    color: #26AA87;
+    margin-bottom: 20px;
+}
+
+.skill-description {
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    line-height: 1.7;
+}
+
+.skill-title i {
+    margin-right: 10px;
+    color: #26AA87;
+    font-size: 3.5rem;
+    vertical-align: middle;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1024px) {
+    header {
+        padding: 20px 40px;
+    }
+    header h1 {
+        font-size: 3.5rem;
+    }
+    nav ul {
+        gap: 30px;
+    }
+    nav ul li {
+        font-size: 1.5rem;
+    }
+    .skills-container {
+        padding: 0 40px;
+        margin: 60px auto;
+        gap: 40px;
+    }
+    .skill-title {
+        font-size: 2.5rem;
+    }
+    .skill-title i {
+        font-size: 3rem;
+    }
+    .skill-description {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px 30px;
+    }
+    header h1 {
+        font-size: 2.5rem;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, #000000 20%, #1a3d36);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+    nav.active {
+        max-height: 500px;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 20px 0;
+    }
+    nav ul li {
+        font-size: 1.5rem;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    nav ul li:last-child {
+        border-bottom: none;
+    }
+    nav ul li a {
+        padding: 15px 30px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 15px 20px;
+    }
+    header h1 {
+        font-size: 1.8rem;
+    }
+    nav ul li {
+        font-size: 1.2rem;
+    }
+    .skills-container {
+        padding: 0 20px;
+        margin: 40px auto;
+        gap: 25px;
+        grid-template-columns: 1fr;
+    }
+    .skill-card {
+        padding: 25px;
+    }
+    .skill-title {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+    .skill-title i {
+        font-size: 2.2rem;
+        display: block;
+        margin-bottom: 10px;
+    }
+    .skill-description {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 320px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    nav ul li {
+        font-size: 1rem;
+    }
+    .skills-container {
+        margin: 30px auto;
+        gap: 20px;
+    }
+    .skill-card {
+        padding: 20px;
+    }
+    .skill-title {
+        font-size: 1.5rem;
+    }
+    .skill-title i {
+        font-size: 2rem;
+    }
+    .skill-description {
+        font-size: 0.9rem;
+    }
+}

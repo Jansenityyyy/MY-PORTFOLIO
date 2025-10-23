@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jolly+Lodger&family=Kalam:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+    <header>
+        <h1>MY PORTFOLIO</h1>
+        <div class="menu-icon" id="menuIcon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav id="nav">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li class="active"><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="projects-container">
+        <h2 class="projects-title">Projects</h2>
+        <div class="projects-grid">
+            <a href="https://www.ecocycletalipapa.com/" class="project-card" target="_blank">
+                <img src="talipapa.jfif" alt="Eco-Cycle Website" class="project-image">
+                <div class="project-info">
+                    <h3>Eco-Cycle Website</h3>
+                    <p>Eco-Cycle is a trading system where users can earn points by exchanging plastic waste and other recyclables. These points can be converted into valuable items like rice, rags, or vermitea—promoting sustainability and waste reduction.</p>
+                </div>
+            </a>            
+        </div>
+        <div class="view-all">
+            <a href="#" class="view-all-btn">View All Projects</a>
+        </div>
+    </section>
+
+    <script>
+        const menuIcon = document.getElementById('menuIcon');
+const nav = document.getElementById('nav');
+
+menuIcon.addEventListener('click', () => {
+    menuIcon.classList.toggle('active');
+    nav.classList.toggle('active');
+});
+
+const navLinks = document.querySelectorAll('nav ul li a');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        menuIcon.classList.remove('active');
+        nav.classList.remove('active');
+    });
+});
+
+document.addEventListener('click', (e) => {
+    if (!nav.contains(e.target) && !menuIcon.contains(e.target)) {
+        menuIcon.classList.remove('active');
+        nav.classList.remove('active');
+    }
+});
+
+    </script>
+</body>
+</html>
